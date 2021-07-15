@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Genres: Codable {
+struct Genres: Codable, Returnable {
     let genres: [Genre]
 }
 
