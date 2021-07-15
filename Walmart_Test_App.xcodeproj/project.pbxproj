@@ -21,6 +21,7 @@
 		463296FA26A090000005C66C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463296F926A090000005C66C /* Movie.swift */; };
 		463296FC26A091C70005C66C /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463296FB26A091C70005C66C /* MovieListViewModel.swift */; };
 		463296FE26A093AC0005C66C /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463296FD26A093AC0005C66C /* Genre.swift */; };
+		4632970226A096C10005C66C /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4632970126A096C10005C66C /* EndPoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		463296F926A090000005C66C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		463296FB26A091C70005C66C /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		463296FD26A093AC0005C66C /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		4632970126A096C10005C66C /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				463296F326A088BD0005C66C /* APIHandler.swift */,
+				4632970126A096C10005C66C /* EndPoints.swift */,
 			);
 			path = APIHandler;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				463296C1269FD7E60005C66C /* MovieListViewController.swift in Sources */,
 				463296FC26A091C70005C66C /* MovieListViewModel.swift in Sources */,
 				463296F826A08C4E0005C66C /* CollectionViewCell.swift in Sources */,
+				4632970226A096C10005C66C /* EndPoints.swift in Sources */,
 				463296BD269FD7E60005C66C /* AppDelegate.swift in Sources */,
 				463296BF269FD7E60005C66C /* SceneDelegate.swift in Sources */,
 				463296F426A088BD0005C66C /* APIHandler.swift in Sources */,

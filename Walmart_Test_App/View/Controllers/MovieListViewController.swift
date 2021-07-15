@@ -16,7 +16,9 @@ class MovieListViewController: UIViewController {
         super.viewDidLoad()
 
         vm = MovieListViewModel()
-
+        vm?.fetchMovieData(completion: {
+            
+        })
     }
 
 
