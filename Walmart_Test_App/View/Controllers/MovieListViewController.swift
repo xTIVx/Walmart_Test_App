@@ -16,7 +16,6 @@ class MovieListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         vm = MovieListViewModel()
         loadingIndicator.startAnimating()
         vm?.fetchMovieData(completion: {
@@ -59,6 +58,14 @@ extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDat
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = sb.instantiateViewController(identifier: "DetailVC") as? DetailViewController,
+              let vm = self.vm,
+              let movie = vm.getMovieForCell(at: indexPath.item) else {return}
+        vc.vm = DetailViewModel()
+        vc.setMovie(movie: movie)
+        navigationController?.present(vc, animated: true, completion: nil)
 
     }
 

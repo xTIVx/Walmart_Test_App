@@ -16,7 +16,6 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var genreLbl: UILabel!
 
 
-
     var MovieObj: Movie? {
         willSet(value) {
             guard let value = value else {return}
@@ -40,9 +39,9 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     override func awakeFromNib() {
-         super.awakeFromNib()
+        super.awakeFromNib()
         contentView.layer.cornerRadius = 6
-     }
+    }
 }
 
 

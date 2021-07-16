@@ -55,7 +55,7 @@ class MovieListViewModel {
               let genreID = movie.genre_ids?.first else {return nil}
         let genre = genres?.filter {$0.id == genreID}
         
-        return Movie(title: movie.title, popularity: movie.popularity, release_date: movie.release_date, poster_path: movie.poster_path, genre_ids: nil, mainGenre: genre?.first)
+        return Movie(title: movie.title, popularity: movie.popularity, release_date: movie.release_date, poster_path: movie.poster_path, genre_ids: nil, mainGenre: genre?.first, id: movie.id)
     }
 
 
