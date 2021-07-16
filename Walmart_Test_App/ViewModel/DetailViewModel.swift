@@ -53,7 +53,7 @@ class DetailViewModel {
     /// Using for download image poster for UIImage
     /// - Returns: Data with image
     func getPoster() -> Data? {
-        if let url = URL(string: "https://image.tmdb.org/t/p/w500/\(self.movieObject?.poster_path ?? "")") {
+        if let url = URL(string: Constants.ImageURLBase.rawValue + (self.movieObject?.poster_path ?? "")) {
             if let data = try? Data(contentsOf: url) {
                 return data
             }

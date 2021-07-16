@@ -10,4 +10,5 @@ import Foundation
 
 enum Constants: String {
     case APIKey = "d1c25a3c5f26b3b44061523d7ae96cd6"
+    case ImageURLBase = "https://image.tmdb.org/t/p/w500/"
 }

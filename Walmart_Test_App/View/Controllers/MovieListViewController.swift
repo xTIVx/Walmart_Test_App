@@ -12,11 +12,13 @@ class MovieListViewController: UIViewController {
 
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
+    // ViewModel
     var vm: MovieListViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         vm = MovieListViewModel()
+        // Loading initial data
         loadingIndicator.startAnimating()
         vm?.fetchMovieData(completion: {
             DispatchQueue.main.async {
@@ -27,7 +29,7 @@ class MovieListViewController: UIViewController {
     }
 }
 
-
+// CollectionView Delegates
 extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let vm = self.vm else {return 0}
@@ -45,17 +47,6 @@ extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDat
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        guard let count = vm?.getMoviesCount() else {return}
-        if (count - 2) == indexPath.item {
-            vm?.fetchMovieData(completion: {
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            })
-        }
-    }
-
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
 
@@ -67,6 +58,18 @@ extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDat
         navigationController?.present(vc, animated: true, completion: nil)
     }
 
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if ((collectionView.contentOffset.y + collectionView.frame.size.height) >= collectionView.contentSize.height)
+        {
+            guard let vm = vm else {return}
+            DispatchQueue.main.async {
+                vm.fetchMovieData(completion: {
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                    }
+                })                     }
+        }
+    }
 }
 
 

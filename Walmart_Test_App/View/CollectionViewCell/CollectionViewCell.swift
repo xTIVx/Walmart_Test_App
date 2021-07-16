@@ -26,7 +26,7 @@ class CollectionViewCell: UICollectionViewCell {
                 genreLbl.text = "Genre: \(genre.name ?? "-")"
             }
             //Setting image
-            if let url = URL(string: "https://image.tmdb.org/t/p/w500/\(value.poster_path ?? "-")") {
+            if let url = URL(string: Constants.ImageURLBase.rawValue + (value.poster_path ?? "")) {
                 if let data = try? Data(contentsOf: url) {
                     if let image = UIImage(data: data) {
                         DispatchQueue.main.async {
