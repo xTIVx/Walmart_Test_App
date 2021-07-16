@@ -13,7 +13,7 @@
 		463296C4269FD7E60005C66C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463296C2269FD7E60005C66C /* Main.storyboard */; };
 		463296C6269FD7EC0005C66C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463296C5269FD7EC0005C66C /* Assets.xcassets */; };
 		463296C9269FD7EC0005C66C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463296C7269FD7EC0005C66C /* LaunchScreen.storyboard */; };
-		463296D4269FD7EC0005C66C /* Walmart_Test_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463296D3269FD7EC0005C66C /* Walmart_Test_AppTests.swift */; };
+		463296D4269FD7EC0005C66C /* AIPHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463296D3269FD7EC0005C66C /* AIPHandlerTests.swift */; };
 		463296DF269FD7EC0005C66C /* Walmart_Test_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463296DE269FD7EC0005C66C /* Walmart_Test_AppUITests.swift */; };
 		463296F426A088BD0005C66C /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463296F326A088BD0005C66C /* APIHandler.swift */; };
 		463296F626A088D90005C66C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463296F526A088D90005C66C /* Constants.swift */; };
@@ -22,6 +22,9 @@
 		463296FC26A091C70005C66C /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463296FB26A091C70005C66C /* MovieListViewModel.swift */; };
 		463296FE26A093AC0005C66C /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463296FD26A093AC0005C66C /* Genre.swift */; };
 		4632970226A096C10005C66C /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4632970126A096C10005C66C /* EndPoints.swift */; };
+		46B4C37B26A114FD008162D3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4C37A26A114FD008162D3 /* DetailViewController.swift */; };
+		46B4C37D26A1209D008162D3 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4C37C26A1209D008162D3 /* DetailViewModel.swift */; };
+		46B4C37F26A1D5CD008162D3 /* MovieListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B4C37E26A1D5CD008162D3 /* MovieListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +54,7 @@
 		463296C8269FD7EC0005C66C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		463296CA269FD7EC0005C66C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		463296CF269FD7EC0005C66C /* Walmart_Test_AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Walmart_Test_AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		463296D3269FD7EC0005C66C /* Walmart_Test_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walmart_Test_AppTests.swift; sourceTree = "<group>"; };
+		463296D3269FD7EC0005C66C /* AIPHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIPHandlerTests.swift; sourceTree = "<group>"; };
 		463296D5269FD7EC0005C66C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		463296DA269FD7EC0005C66C /* Walmart_Test_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Walmart_Test_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		463296DE269FD7EC0005C66C /* Walmart_Test_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walmart_Test_AppUITests.swift; sourceTree = "<group>"; };
@@ -63,6 +66,9 @@
 		463296FB26A091C70005C66C /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		463296FD26A093AC0005C66C /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		4632970126A096C10005C66C /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		46B4C37A26A114FD008162D3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		46B4C37C26A1209D008162D3 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		46B4C37E26A1D5CD008162D3 /* MovieListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +131,8 @@
 		463296D2269FD7EC0005C66C /* Walmart_Test_AppTests */ = {
 			isa = PBXGroup;
 			children = (
-				463296D3269FD7EC0005C66C /* Walmart_Test_AppTests.swift */,
+				46B4C37E26A1D5CD008162D3 /* MovieListViewModelTests.swift */,
+				463296D3269FD7EC0005C66C /* AIPHandlerTests.swift */,
 				463296D5269FD7EC0005C66C /* Info.plist */,
 			);
 			path = Walmart_Test_AppTests;
@@ -152,6 +159,7 @@
 		463296ED26A086040005C66C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				46B4C37926A114D8008162D3 /* CollectionViewCell */,
 				463296F226A0865B0005C66C /* Controllers */,
 				463296F126A086370005C66C /* Storyboards */,
 			);
@@ -162,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				463296FB26A091C70005C66C /* MovieListViewModel.swift */,
+				46B4C37C26A1209D008162D3 /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -200,9 +209,17 @@
 			isa = PBXGroup;
 			children = (
 				463296C0269FD7E60005C66C /* MovieListViewController.swift */,
-				463296F726A08C4E0005C66C /* CollectionViewCell.swift */,
+				46B4C37A26A114FD008162D3 /* DetailViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		46B4C37926A114D8008162D3 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				463296F726A08C4E0005C66C /* CollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,12 +352,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46B4C37B26A114FD008162D3 /* DetailViewController.swift in Sources */,
 				463296FE26A093AC0005C66C /* Genre.swift in Sources */,
 				463296FA26A090000005C66C /* Movie.swift in Sources */,
 				463296F626A088D90005C66C /* Constants.swift in Sources */,
 				463296C1269FD7E60005C66C /* MovieListViewController.swift in Sources */,
 				463296FC26A091C70005C66C /* MovieListViewModel.swift in Sources */,
 				463296F826A08C4E0005C66C /* CollectionViewCell.swift in Sources */,
+				46B4C37D26A1209D008162D3 /* DetailViewModel.swift in Sources */,
 				4632970226A096C10005C66C /* EndPoints.swift in Sources */,
 				463296BD269FD7E60005C66C /* AppDelegate.swift in Sources */,
 				463296BF269FD7E60005C66C /* SceneDelegate.swift in Sources */,
@@ -352,7 +371,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				463296D4269FD7EC0005C66C /* Walmart_Test_AppTests.swift in Sources */,
+				463296D4269FD7EC0005C66C /* AIPHandlerTests.swift in Sources */,
+				46B4C37F26A1D5CD008162D3 /* MovieListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,7 +470,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -505,7 +525,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -7,9 +7,7 @@
 
 import Foundation
 
-protocol Returnable {
-
-}
+protocol Returnable {}
 
 struct Movies: Codable, Returnable {
     let results: [Movie]
@@ -23,4 +21,9 @@ struct Movie: Codable, Returnable {
     let poster_path: String?
     let genre_ids: [Int]?
     let mainGenre: Genre?
+    let id: Int?
+    var overview: String? = nil
+    var runtime: Int? = nil
+    var homepage: String? = nil
 }
+
