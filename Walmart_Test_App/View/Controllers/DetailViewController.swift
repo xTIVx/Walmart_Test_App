@@ -20,12 +20,14 @@ class DetailViewController: UIViewController {
 
 
     func setMovie(movie: Movie) {
+        vm = DetailViewModel()
         vm?.delegate = self
         vm?.setMovieObject(movie: movie)
     }
 }
 
 extension DetailViewController: UpdateDetailProtocol {
+    // Delegate call
     func didRecieveMovie(movie: Movie) {
         DispatchQueue.main.async {
 

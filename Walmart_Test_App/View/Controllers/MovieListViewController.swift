@@ -63,10 +63,8 @@ extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDat
         guard let vc = sb.instantiateViewController(identifier: "DetailVC") as? DetailViewController,
               let vm = self.vm,
               let movie = vm.getMovieForCell(at: indexPath.item) else {return}
-        vc.vm = DetailViewModel()
         vc.setMovie(movie: movie)
         navigationController?.present(vc, animated: true, completion: nil)
-
     }
 
 }

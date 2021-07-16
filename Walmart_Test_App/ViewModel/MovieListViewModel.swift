@@ -13,6 +13,9 @@ class MovieListViewModel {
     private var genres: [Genre]?
     var currentPage = 1
 
+
+    /// Func for update list of genres
+    /// - Parameter completion: Calling completion when genres are updated
     private func fetchGenres(completion:@escaping () -> ()) {
         APIHandler.shared.requestData(endPoint: .genres) { [weak self] resp in
             guard let genres = (resp as? Genres)?.genres,
@@ -22,6 +25,10 @@ class MovieListViewModel {
         }
     }
 
+    /// Func for update list of Movies
+    /// - Parameters:
+    ///   - page: number of page (1 page containing 20 movie objects)
+    ///   - completion: calling when update is done
     private func fetchMovies(page: Int = 1, completion:@escaping () -> ()) {
         APIHandler.shared.requestData(endPoint: .popularMovies, page: page) { [weak self] resp in
             guard let movies = (resp as? Movies)?.results,
@@ -31,6 +38,8 @@ class MovieListViewModel {
         }
     }
 
+    /// Function combiner, fetching genres and movies 1 by 1
+    /// - Parameter completion: calling when function is done with update genres and movies
     func fetchMovieData(completion:@escaping () -> ()) {
         let dg = DispatchGroup()
         if genres == nil {
@@ -50,6 +59,10 @@ class MovieListViewModel {
         }))
     }
 
+
+    /// Func for an access to Movie for specific item in collectionView
+    /// - Parameter item: number for item(row) in collecion view
+    /// - Returns: Movie object for specific item
     func getMovieForCell(at item: Int) -> Movie? {
         guard let movie = movieList?[item],
               let genreID = movie.genre_ids?.first else {return nil}
@@ -59,6 +72,7 @@ class MovieListViewModel {
     }
 
 
+    /// - Returns: Count of items for CollectionView depends of number of Movie objects
     func getMoviesCount() -> Int {
         return movieList?.count ?? 0
     }

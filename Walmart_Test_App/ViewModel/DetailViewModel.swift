@@ -13,8 +13,10 @@ protocol UpdateDetailProtocol {
 
 class DetailViewModel {
 
+    // Need for return updated Movie object back to Controller
     var delegate: UpdateDetailProtocol?
 
+    // Object for show on DetailVC, comes from MovieListVC
     var movieObject: Movie? {
         didSet {
             guard let movie = movieObject else {return}
@@ -22,6 +24,11 @@ class DetailViewModel {
         }
     }
 
+
+    /// Func getting existing Movie object and adding missing fields for DetailVC
+    /// - Parameters:
+    ///   - movie: Existing object
+    ///   - completion: calling with updated Movie
     func updateMovieObject(movie: Movie, completion:@escaping (Movie) -> ()) {
         guard let id = movie.id else {return}
         APIHandler.shared.requestData(endPoint: .movieDetails, movieID: id) { resp in
@@ -34,12 +41,17 @@ class DetailViewModel {
         }
     }
 
+
+    /// Need for initially set object to VM
+    /// - Parameter movie: came from MovieList
     func setMovieObject(movie: Movie) {
         self.updateMovieObject(movie: movie) { movie in
             self.movieObject = movie
         }
     }
 
+    /// Using for download image poster for UIImage
+    /// - Returns: Data with image
     func getPoster() -> Data? {
         if let url = URL(string: "https://image.tmdb.org/t/p/w500/\(self.movieObject?.poster_path ?? "")") {
             if let data = try? Data(contentsOf: url) {

@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Walmart test app!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLx-F3-SvD">
-                                <rect key="frame" x="20" y="435" width="374" height="26.5"/>
+                                <rect key="frame" x="64.5" y="435" width="285.5" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -26,8 +26,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KLx-F3-SvD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7d7-zI-DWg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KLx-F3-SvD" secondAttribute="trailing" constant="20" id="Jwn-co-fov"/>
+                            <constraint firstItem="KLx-F3-SvD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7d7-zI-DWg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KLx-F3-SvD" secondAttribute="trailing" id="Jwn-co-fov"/>
                             <constraint firstItem="KLx-F3-SvD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="LIQ-rr-34B"/>
                             <constraint firstItem="KLx-F3-SvD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="tvi-oK-JaG"/>
                         </constraints>
