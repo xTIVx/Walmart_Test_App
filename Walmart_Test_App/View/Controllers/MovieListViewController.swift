@@ -10,18 +10,22 @@ import UIKit
 class MovieListViewController: UIViewController {
 
 
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var collectionView: UICollectionView!
     var vm: MovieListViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         vm = MovieListViewModel()
+        loadingIndicator.startAnimating()
         vm?.fetchMovieData(completion: {
-            
+            DispatchQueue.main.async {
+                self.loadingIndicator.stopAnimating()
+                self.collectionView.reloadData()
+            }
         })
     }
-
-
 }
 
 
@@ -32,15 +36,33 @@ extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDat
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CollectionViewCell,
+              let vm = self.vm else {
             return UICollectionViewCell()
         }
 
-        
+        cell.MovieObj = vm.getMovieForCell(at: indexPath.item)
 
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let count = vm?.getMoviesCount() else {return}
+        if (count - 2) == indexPath.item {
+            vm?.fetchMovieData(completion: {
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            })
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+
+    }
 
 }
+
+
 

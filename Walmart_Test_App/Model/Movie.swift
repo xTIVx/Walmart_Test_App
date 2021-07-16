@@ -7,16 +7,14 @@
 
 import Foundation
 
-protocol Returnable {
-
-}
+protocol Returnable {}
 
 struct Movies: Codable, Returnable {
     let results: [Movie]
 }
 
 
-struct Movie: Codable, Returnable {
+struct Movie: Codable {
     let title: String?
     let popularity: Double?
     let release_date: String?
