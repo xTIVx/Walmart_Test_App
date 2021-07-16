@@ -67,7 +67,8 @@ extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDat
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
                     }
-                })                     }
+                })
+            }
         }
     }
 }

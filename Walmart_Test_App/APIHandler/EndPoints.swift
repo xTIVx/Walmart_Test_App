@@ -8,7 +8,6 @@
 import Foundation
 
 
-
 struct EndPoint {
     let scheme: String
     let host: String

@@ -27,4 +27,3 @@ struct Movie: Codable, Returnable {
     var homepage: String? = nil
 }
 
-// https://api.themoviedb.org/3/movie/52125?api_key=d1c25a3c5f26b3b44061523d7ae96cd6
