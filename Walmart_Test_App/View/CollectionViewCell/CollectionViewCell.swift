@@ -27,14 +27,19 @@ class CollectionViewCell: UICollectionViewCell {
             }
             //Setting image
             if let url = URL(string: Constants.ImageURLBase.rawValue + (value.poster_path ?? "")) {
-                if let data = try? Data(contentsOf: url) {
-                    if let image = UIImage(data: data) {
-                        DispatchQueue.main.async {
-                            self.thumbnailImg.image = image
+                DispatchQueue.global(qos: .background).async {
+                    if let data = try? Data(contentsOf: url) {
+                        if let image = UIImage(data: data) {
+                            DispatchQueue.main.async {
+                                self.thumbnailImg.image = image
+                            }
                         }
                     }
                 }
             }
+            //            else {
+            //                self.thumbnailImg.image = image
+            //            }
         }
     }
     
