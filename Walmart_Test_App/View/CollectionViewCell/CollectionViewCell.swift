@@ -37,9 +37,9 @@ class CollectionViewCell: UICollectionViewCell {
                     }
                 }
             }
-            //            else {
-            //                self.thumbnailImg.image = image
-            //            }
+            else {
+                self.thumbnailImg.image = UIImage(named: "template")
+            }
         }
     }
     
